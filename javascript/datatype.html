@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Datatypes in javascript</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//there are 7 primitives datatype
+		//n=null,number b=byte,boolean s=symbol, string u=undefined
+		let a=null;
+		let b=200;
+		let c=BigInt("222");
+		let d=true;
+		let e="manish";
+		let f=Symbol("this is a example of symbol");
+		let g;
+		console.log(a,b,c,d,e,f,g);
+		document.write(typeof d);
+
+		//Non-primitive Datatype-objects in js
+		const student={
+			name:"manish",
+			class:"bachelors",
+			field:"IT"
+		}
+		console.log(student);
+
+		//conditional expressions
+		let num=prompt("Enter your age");
+		num=Number.parseInt(num); // converting the string to a number
+		if(num>=18){
+			document.write("<br>you are eligible for vote.");
+		}
+		else{
+			document.write("You are not eligible for vote.");
+		}
+
+		//ternary operator
+		// let drive=num>=18?"You can drive":"You can't drive";
+		// document.write(drive);
+	</script>
+
+</body>
+</html>

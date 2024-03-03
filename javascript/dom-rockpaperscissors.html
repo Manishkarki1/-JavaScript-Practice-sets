@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <style type="text/css">
+        body{
+            /*background-color: black;*/
+            background-color: rgb(25,25,25);
+            color:white;
+        }
+        .title{
+            font-size: 30px;
+            font-weight:bold;
+        }
+        button:not(:last-child){
+            font-size: 15px;
+            border:0;
+            padding:10px;
+            cursor: pointer;
+        }
+        #auto{
+            /*font-size: 15px;*/
+            border:0;
+            /*padding:10px;*/
+            cursor: pointer;
+        }
+    </style>
+  </head>
+  <body>
+    <p class="title">Rock Paper Scissors</p>
+    <button onclick="
+      playGame('rock');
+      updatescore();
+    ">Rock</button>
+
+    <button onclick="
+      playGame('paper');
+      updatescore();
+    ">Paper</button>
+
+    <button onclick="
+      playGame('scissors');
+      updatescore();
+    ">Scissors</button>
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
+    <button onclick="
+    	score.wins=0;
+    	score.lose=0;
+    	score.tie=0;
+        localStorage.removeItem('score');
+        updatescore();
+    	alert('Successfully Reset');
+    ">Reset Score</button>
+    <button onclick="autoPlay()" id="auto">Auto Play</button>
+
+    <script>
+        let result='';
+    	let score=JSON.parse(localStorage.getItem('score'))||{
+    		wins:0,
+    		lose:0,
+    		tie:0
+    	};
+
+        let isAutoplaying=false;
+        let intervalId;
+
+
+        function autoPlay(){
+            if(!isAutoplaying){
+                intervalId=setInterval(()=>{
+                    const playerMove=pickComputerMove();
+                    playGame(playerMove);
+                    updatescore();
+                },1000);
+                document.querySelector('#auto').innerHTML=`<button id="auto">Stop</button>`;
+                isAutoplaying=true;   
+            }
+            else{
+                clearInterval(intervalId);
+                document.querySelector('#auto').innerHTML=`<button id="auto">Auto Play</button`;
+                isAutoplaying=false;
+            }
+            
+        }
+        document.body.addEventListener('keydown',(event)=>{
+            if(event.key==='r'){
+                playGame('rock');
+            }
+            else if(event.key==='p'){
+                playGame('paper');
+            }
+            else if(event.key==='s'){
+                playGame('scissors');
+            }
+        });
+        
+        updatescore();
+    	function playGame(playerMove) {
+    		
+    	 	const computerMove = pickComputerMove(); 	
+    	 	if(playerMove==='scissors'){
+    	 		if(computerMove==='rock'){
+    	 			result='You lose';
+    	 		}
+    	 		else if(computerMove==='paper'){
+    	 			result='You won';
+    	 		}
+    	 		else if(computerMove==='scissors'){
+    	 			result='tie';
+    	 		}
+    	 	}
+    	 	else if(playerMove==='rock'){
+    	 		if(computerMove==='scissors'){
+    	 			result='You won';
+    	 		}
+    	 		else if(computerMove==='paper'){
+    	 			result='You lose';
+    	 		}
+    	 		else if(computerMove==='rock'){
+    	 			result='tie';
+    	 		}
+    	 	}
+    	 	else if(playerMove==='paper'){
+    	 		if(computerMove==='rock'){
+    	 			result='You win';
+    	 		}
+    	 		else if(computerMove==='scissors'){
+    	 			result='You lose';
+    	 		}
+    	 		else if(computerMove==='paper'){
+    	 			result='tie';
+    	 		}
+    	 	}
+
+    	 	if(result==='You won'){
+    	 		score.wins+=1;		
+    	 	}
+    	 	else if(result==='You lose'){
+    	 		score.lose+=1;
+    	 	}
+    		else if(result==='tie'){
+    			score.tie+=1;
+    		}
+
+            localStorage.setItem('score',JSON.stringify(score));
+            document.querySelector('.js-result').innerHTML=result;
+            document.querySelector('.js-moves').innerHTML=`You ${playerMove} - computer ${computerMove}`;
+
+    //     	  	alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+    // wins:${score.wins},Losses:${score.lose},Ties:${score.tie} `);
+    	}
+        function updatescore(){
+             document.querySelector(".js-score").innerHTML=`wins:${score.wins},Losses:${score.lose},Ties:${score.tie} `;
+
+        }
+
+    	function pickComputerMove() {
+    		let result = ['rock','paper','scissors'];
+    		let computer=result[Math.floor(Math.random()*result.length)];
+    	  	return computer;
+    	} 
+    </script>
+  </body>
+</html>

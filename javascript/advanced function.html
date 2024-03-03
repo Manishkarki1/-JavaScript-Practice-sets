@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced function</title>
+</head>
+<body>
+	<button class="js-btn" onclick="done();">finish</button>
+	<button class="cart-btn" onclick="added();">Add to Cart</button>
+	<p class="js-result"></p>
+	<script type="text/javascript">
+		/*
+		function greeting(){
+			console.log('hello');
+		}
+		greeting();
+
+		//anonymous function(function without a name)
+		// function are value
+		const num=2;
+		const function2=function(){
+			console.log("hello2");
+		}
+		console.log(function2);
+		function2();
+
+
+		const object1={
+			num:2,
+			func:function(){
+				console.log("hello3");
+			}
+		};
+		object1.func();
+
+		function display(parameter){
+			console.log(parameter);
+		}
+		display(2);
+
+		// callbacks
+		function run(param){
+			param();
+		}
+		run(function(){
+			console.log('hello4');
+		})
+		
+		[
+			'make dinner',
+			'wash dishes',
+			'watch movies'
+		].forEach(function(value,index){
+			console.log(value);
+			console.log(index);
+		});
+
+		let add=function(){
+			console.log(2+3);
+		}
+		function runTwice(fun){
+			fun();
+			fun();
+		}
+		runTwice(function(){
+			console.log('12b');
+		});
+		runtwice(add);
+
+		function done(){
+			const btnelement=document.querySelector('.js-btn');
+			btnelement.innerHTML='loading';
+			setTimeout(function(){
+				btnelement.innerHTML='finished';
+			},1000);
+
+		}
+	*/
+		function added(){
+			const btnelement=document.querySelector('.js-result');
+			btnelement.innerHTML="Added";
+			setTimeout(function(){
+				btnelement.innerHTML="";
+			},2000);
+		}
+		function notified(){
+			if(document.title==='App'){
+				document.title='(2) New messages';
+			}
+			else{
+				document.title='App';
+			}
+		}
+		setInterval(notified(),1000);
+		
+		
+
+
+
+	</script>
+
+
+</body>
+</html>

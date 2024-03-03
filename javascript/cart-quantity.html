@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cart Quantity</title>
+</head>
+<body>
+	<h2>Cart Quantity</h2>
+	<button onclick="show()">Show Quantity</button>
+	<button onclick="add()">Add to Cart</button>
+	<button onclick="add2()">+2</button>
+	<button onclick="add3()">+3</button>
+	<button onclick="reset()">Reset Cart</button>
+
+	<script type="text/javascript">
+		let cartQuantity=0;
+		function show(){
+			console.log(`cart quanity:${cartQuantity}`);
+		}
+		function add(){
+			cartQuantity+=1;
+			console.log(`cart quanity:${cartQuantity}`);
+		}
+		function add2(){
+			cartQuantity+=2;
+			console.log(`cart quanity:${cartQuantity}`);
+		}
+		function add3(){
+			cartQuantity+=3;
+			console.log(`cart quanity:${cartQuantity}`);
+		}
+		function reset(){
+			cartQuantity=0;
+			console.log(`cart quanity:${cartQuantity}`);
+		}
+		let random=Math.random();
+		let pro=Math.floor(random*100);
+
+		console.log(pro);
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closures practice</title>
+</head>
+<body>
+ <h2>Remember that closures return a function.</h2>
+<script type="text/javascript">
+//Memory efficient
+	//without using closures
+	function heavyDuty(){
+		const bigArray= new Array(50).fill('1');
+		console.log(bigArray);
+
+	}
+	heavyDuty(44);
+	heavyDuty(33);
+
+	//using closures
+	const getHeavyDuty=heavyDuty2();
+	console.log(getHeavyDuty(44));
+	console.log(getHeavyDuty(42));
+	function heavyDuty2(){
+		const bigArray= new Array(50).fill('1');
+	
+		return function(index){
+			return bigArray[index];
+		}
+	}
+//Encapsulation
+	//closures plays a significant role in data hiding or encapsulation
+	const makeNuclearButton = () =>{
+		let timeWithoutDestruction=0;
+		const passTime=()=>timeWithoutDestruction++;
+		const launch= () =>{
+			timeWithoutDestruction=-1;
+			return 'boom'} 
+		const totalPeaceTime=()=> timeWithoutDestruction;
+		setInterval(passTime,1000);
+		return {
+			// launch: launch, 
+			totalPeaceTime:totalPeaceTime
+		}
+	}
+	const badluck=makeNuclearButton();
+	console.log(badluck.totalPeaceTime());
+	console.log(badluck.totalPeaceTime());
+
+	//examples 1
+	function fileSaved(){
+		let called=0;
+		console.log(called);
+		return function(){
+			if(called>0){
+				return;
+
+			}
+			else{
+				called++;
+				console.log(called);
+				console.log("your file has been saved");
+			}
+		}	
+	}
+		const startOnce=fileSaved();
+
+		startOnce();
+		startOnce();
+
+	//examples 2
+	const array=[1,2,3,4]
+	for(var i=0;i<array.length;i++){
+		(function print(closurei){
+			setTimeout(function(){
+				console.log("I am at index"+closurei)
+			},3000); 
+		})(i)
+	}
+	// print();
+
+
+</script>
+</body>
+</html>

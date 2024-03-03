@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map,Filter and Reduce practice</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//replace method
+		// let array=[10,22,34,20]
+		// let a=array.map((value,index)=>{
+		// 	console.log(value,index);
+		// });
+		let array=[2,3,4,5,6];
+		let a=array.map((x)=>{
+			return x**2;
+		});
+		console.log(array);
+		console.log(a);
+
+		//map
+		const map=new Map();
+		map.set('manish',"karki");
+		map.set('bimal');
+		map.set('bishal');
+		console.log(map);
+
+		//map using loop
+		for(const [key,value] of map){
+			console.log(key,'=',value);
+		}
+
+		const myNumbers=[1,2,3,4,5,6];
+		const newNums=myNumbers.map((num)=>num+10).map((num)=>num+1).filter((num)=>num>=10);
+
+		console.log(newNums);
+
+		//filter method
+		let arr=[45,20,15,2,3];
+		let b=arr.filter((c)=>{
+			return c%2==0;
+		});
+		console.log(b);	
+
+		// let arr=[];
+		// let user;
+		// do{
+		// 	user=prompt("Enter the numbers");
+		// 	user=Number.parseInt(user)
+		// 	arr.push(user);
+		// }
+		// while(arr.length!=5);
+		// let b=arr.filter((divisible)=>{ 	
+		// 	return divisible%10==0;
+		// });
+		// console.log(arr);
+		// console.log(b);
+
+
+		//reduce method
+		let array1=[2,3,1,4,20,21];
+		let newarray=array1.reduce((h1,h2)=>{
+			console.log(`${h1} and ${h2}`);
+			return h1+h2;
+		},0);
+		console.log(newarray);
+		console.log(array1);
+
+		//second example
+		const course=[
+		{
+			name:'javascript',
+			price:5000
+		},
+		{
+			name:'cybersecurity',
+			price:10000
+		},
+		{
+			name:'c programming',
+			price:6600
+		}
+		];
+		const priceToPay=course.reduce((accumulator,item)=>accumulator+item.price,0)
+
+		console.log(priceToPay);
+
+	</script>
+
+
+</body>
+</html>

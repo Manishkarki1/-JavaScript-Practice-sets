@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom and bom practice</title>
+</head>
+<body>
+	<div class="container" id="container1">
+		Say no to war<span id="sp1">Ok</span>
+	</div>
+	<div class="container" id="container2">
+		<p>hey how are you?<span style="display: none;">manish</span></p>
+	</div>
+
+	<input type="number" name="">
+
+	<ul>
+		<li>hey</li>
+		<li>how</li>
+		<li>are</li>
+		<li>you</li>
+
+	</ul>
+	<script type="text/javascript">
+		console.log(window);
+		console.log(document.body);
+		document.body.style.background='red';
+
+		console.log(document.body.firstChild);
+		// console.log(document.body.firstElementChild())	
+		console.log(document.body.lastChild);
+		console.log(document.body.childNodes)
+
+		a=document.body.firstChild
+		console.log(a.parentNode);		
+		console.log(a.parentElement);
+
+		// matches
+		document.getElementById("container1").innerHTML="hey";
+		let id1=document.getElementById('container1');
+		let sp1=document.getElementById('sp1');
+		console.log(id1.matches(".container"));
+		console.log(id1.matches(".hey"));
+
+		//closest
+		// console.log(sp1.closest(".container"));
+		
+		//contains
+		console.log(id1.contains(sp1));
+
+		let div=document.createElement('div');
+		// div.innerHTML="hey my name is manish karki";
+		
+		const addText=document.createTextNode("hey my name is manish karki");
+		div.appendChild(addText);
+		document.body.append(div);
+		div.setAttribute('class','manish');
+
+		//querySelector
+
+		document.querySelector("#container1").innerHTML="hey how are you?";
+		console.log(document.querySelector('input[type="number"]'));
+
+		const myul=document.querySelector('ul');
+		const turngreen=myul.querySelector('li');
+		turngreen.style.backgroundColor='green';
+
+		console.log("NODES",turngreen.childNodes);
+		console.log(myul.children);
+		console.log(turngreen.parentElement);
+		console.log(turngreen.nextElementSibling);
+
+		//querySelectorAll
+		const templist=document.querySelectorAll('li');
+		console.log(templist);
+		templist[2].style.backgroundColor='green';
+
+		templist.forEach((e)=>{
+			console.log(e);
+			e.style.color="white";
+		})
+
+		
+		// differences between innerText,textContent and innerHTML
+
+		let inner=document.getElementById("container2").innerText;		//this will show the visible text
+		console.log(inner);
+
+		let content=document.getElementById('container2').textContent;		//this will show all text 
+		console.log(content);
+
+		let html=document.getElementById('container2').innerHTML;		//this will show whole html
+		console.log(html);
+
+
+	</script>
+
+</body>
+</html>

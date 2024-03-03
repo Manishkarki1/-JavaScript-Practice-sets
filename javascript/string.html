@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>string function in js</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str="I am practicing string function in js";
+		console.log(str);
+		var position=str.indexOf("practicing");
+		console.log(position);
+
+		hey=str.lastIndexOf("practicing");
+		console.log(hey);
+
+				//string function
+		var string="His";
+		var name="manish";
+		var channel="LearntoTeach";
+		var subscriber= 14;
+		var temp=`${string} name is ${name} karki.He has a channel named ${channel}. He has only ${subscriber} subscriber.`;
+		console.log(temp);
+		document.write(temp);	
+		var len=name.length;
+		console.log(len);
+		
+		// var str1=temp.indexOf('is');	
+		// document.write(str1);
+		// str1=temp.lastIndexOf('name');
+		// document.write(str1);
+
+		// var substr=temp.slice(1,7);
+		// document.write(substr);
+		var substr=temp.substring(1,7);
+		console.log(substr);
+		var substr=temp.substr(1,7);
+		console.log(substr);
+
+		var replaced=temp.replace("manish","don");
+		document.write(replaced);
+		console.log(replaced);
+
+		var variable="manish";
+		var upper=variable.toUpperCase();
+		console.log(upper);
+		var lower=variable.toLowerCase();
+		console.log(lower);
+
+		// var strwithwhitespace="  this contains    whitespaces  ";
+		// console.log(strwithwhitespace);
+		// console.log(strwithwhitespace.trim());
+		var var1="manish karki";
+		var charAt=var1.charAt(2);
+		console.log(charAt);
+		console.log(var1[2]);
+
+		//Escape sequence characters
+		let n="manish\'surname is karki";        
+		document.write(n);
+
+		let text="\nI am from kathmandu and I love kathmandu";
+		// let replacing=text.replace(/kathmandu/g,"nepal");
+		// document.write(replacing);
+		let replacing=text.replaceAll('kathmandu','nepal');
+		document.write(replacing);
+
+		let amount="please give Rs 1000";
+		// let extract=amount.substr(15,18);
+		let extract=amount.slice("please give Rs".length);	
+		console.log(extract);
+
+		//include function in string
+		let problem="What is your name?";
+		let is=problem.includes("is"); //it give true
+		let getfalse=problem.includes("is",7);		//it will give false because it will see "is" from index7.
+		console.log(is);
+		console.log(getfalse);
+
+		//startsWith and endsWith
+		let practice="Hard work is must needed";
+		let start=practice.startsWith("Hard");
+		let s=practice.startsWith("Hard",4);
+		console.log(start,s);
+
+		let ends=practice.endsWith("needed");
+		let e=practice.endsWith("work",9);
+		console.log(ends,e);
+
+
+	</script>
+</body>
+</html>

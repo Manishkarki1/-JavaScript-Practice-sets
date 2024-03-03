@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objects</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		const product={
+			name:"socks",
+			price:1090
+		};
+		console.log(product);
+		console.log(product.name);
+		console.log(product.price);
+
+		product.name = "shoes";
+		console.log(product);
+
+		product.newProperty=true;
+		console.log(product);
+
+		delete product.newProperty;
+		console.log(product);
+		*/
+
+/*
+		const product2={
+			name:'shirt',
+			'delivery-time':'1 day',
+			rating:{
+				stars:4.5,
+				count:88
+			},
+			funct:function function1(){
+				console.log("function inside object");
+			}
+		};
+		console.log(product2);
+		console.log(product2.name);  //dot notation
+		console.log(product2['name']); //bracket notation
+		console.log(product2['delivery-time']);
+
+		console.log(product2.rating.stars);
+		product2.funct();
+		*/
+
+		const object1={
+			message:'hey'
+		};
+		const object2=object1;
+		object1.message='bye bye';
+		console.log(object1);
+
+		const object3 = {
+			message:'good'
+		};
+
+		/*destructuring
+		const {message}=object3;
+		console.log(message);  //good
+		*/
+
+		console.log(object3===object1);
+		console.log(object2===object1);
+
+		// shorthand method
+		const object5={
+			// method: function function1(){
+			// 	console.log('method');
+			// }
+			method(){
+				console.log("method");
+			}
+		};
+		console.log(object5);
+		object5.method();
+
+		// practice sets
+		
+		const project={
+			product:"basketball",
+			price:"2095cents"
+		};
+		console.log(project);
+		const{product,price}=project;
+		console.log(product);
+		console.log(price);
+		project['delivery-time']='3days';
+		console.log(project);
+		
+
+	</script>
+</body>
+</html>

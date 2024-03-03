@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays and Object</title>
+</head>
+<body>
+	<div class="container">
+		we are practicing arrays and object in javascript.
+	</div>
+
+	<script type="text/javascript">
+		// object
+		let student={
+			name:"manish",
+			class:"bachelors",
+			subject:"BCA"
+		}
+		console.log(student);
+		// console.log(student['subject']);
+		//destructuring
+		const {name,subject}=student;
+		console.log(name);
+		console.log(subject);
+
+		//array
+		// let names=[1,3,"manish",undefined]
+		let names=new Array(1,3,"manish",undefined);
+		let hey=parseInt(names);
+		console.log(typeof hey);
+		console.log(names);
+		console.log(names[1]);
+		console.log(names[3]);
+		
+		// document.write(names.length);	
+
+		// sorting the array
+		let names2=[22,20,19,1,40];
+		document.write(names2.sort());
+		//Array methods
+		let a=names2.toString();
+		console.log(typeof a);
+
+		let b=names2.join(" and ");
+		console.log(b,typeof b);
+
+		let c=names2.pop();		//it will remove the last number i.e 40
+		console.log(names2,c);
+
+		let add=names2.push(49);	//it will add the first number i.e 1
+		console.log(names2);
+
+		// let fremove=names2.shift();	//it will remove the first number i.e 1
+		// console.log(names2,fremove);
+
+		delete names2[0];
+		console.log(names2.length);
+
+		//splice and slice
+		let num=[1,2,2223,3234,22,123];
+		num.splice(1,3,22,23,24,25);  //it will delete three number from index1 and replace 22,23,24
+		console.log(num);
+
+		let newNum=num.slice(3) // it will provide number from index0 to index3
+		console.log(newNum);
+
+		//Array.from
+		let about="manish";
+		let arr=Array.from(about); //to change the string into array
+		console.log(arr);
+
+		const nums=[10,20,30];
+		getLastValue(nums);
+		nums[2]=99;
+		console.log(nums);
+		function getLastValue(array){
+			console.log(array[array.length-1]);
+		}
+		let count=[];
+		for(i=0;i<=5;i++){
+			let num=2*i;
+			count.push(num);
+			console.log(count);	
+		}
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prototypal inheritance</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let dragon={
+			name:'rambo',
+			fire:true,
+			fight(){
+				return 5
+			},
+			sing(){
+				if(this.fire){
+					console.log(`I am ${this.name}. I have ${this.fight()} power.`);
+				}
+			}
+		}
+
+		let lizard={
+			name:'bambo',
+			fight(){
+				return 1
+			}
+		}
+
+		lizard.__proto__ = dragon;
+		lizard.sing()
+		for(let prop in lizard){
+			if(lizard.hasOwnProperty(prop)){
+				console.log(prop);
+			}
+		}
+
+		//array implementing prototypal inheritance in console
+		// let array=[],
+		// array.__proto__.hasOwnProperty('map')); //true
+		
+		//All above code are bad way of inheriting each other.
+		// we can use following ways to inherit
+		let teacher={
+			name:'manish',
+			subject:'math',
+			teach(){
+				return `${this.name} teach us ${this.subject},${this.age}`;
+			}
+		}
+		let teacher2={
+			name:'tara',
+			
+		}
+		teacher2.__proto__=teacher;
+		teacher2.age=12;
+
+		// teacher2=Object.create(teacher);
+		// teacher2.age=12;
+		console.log(teacher2.teach()); 
+
+		//to get last date 
+		 Date.prototype.lastYear=function(){
+			return this.getFullYear()-1;
+		}
+		console.log(new Date('2021-10-9').lastYear());
+
+		//next solution
+		Array.prototype.map=function(){
+			let arr=[];
+			for(let i=0;i<this.length;i++){
+				arr.push((this[i] + '@')); 
+			}
+			return arr
+		}
+		console.log([1,2,3].map())
+		
+		//Constructor Functions
+		function Elf(name,weapon){
+			this.name=name;
+			this.weapon=weapon;
+		}
+		Elf.prototype.attack=function(){
+			return 'attack with '+this.weapon
+		}
+		const peter=new Elf('peter','stones');
+		console.log(peter.attack());
+		console.log(peter)
+
+	</script>
+}
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>practice</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// let number=prompt("Enter your number: ");
+		// number=Number.parseInt(number);
+		// if(number>4){
+		// 	location.href="https://google.com";
+		// }
+		// else{
+		// 	confirm("number is less than 4. Do you want to try once again?");
+		// }
+
+		confirm("let's play rock,paper and scissors game.");
+		let Ucount=0;
+		let Ccount=0;	
+		let arr=['rock','paper','scissors'];
+		for(let i=0;i<5;i++){
+			let computer=arr[Math.floor(Math.random()*arr.length)];
+			let user=prompt("Enter scissors,paper or rock");
+			if(user=='scissors' && computer=='rock'){
+				console.log("You lose");
+
+				Ccount+=1;
+			}
+			else if(user=='paper' && computer=='scissors'){
+				console.log("You lose");
+				Ccount+=1;
+			}
+			else if(user=='rock' && computer=='paper'){
+				console.log("you lose");
+				Ccount+=1;
+			}
+			else if(user=='rock' && computer=='scissors'){
+				console.log("You won");
+				Ucount+=1;
+			}
+			else if(user=='scissors' && computer=='paper'){
+				console.log("you won");
+				Ucount+=1;
+			}
+			else if(user=='paper' && computer=='rock'){
+				console.log("you won");
+				Ucount+=1;
+			}
+			i++;
+		}
+		if(Ccount>Ucount){
+			console.info(`Computer won by ${Ccount-Ucount} point`);
+		}
+		else if(Ucount>Ccount){
+			console.info(`You won by ${Ucount-Ccount} points`);
+		}
+		else{
+			console.info("Draw");
+		}
+
+		//finding the area of regular triangle
+		// let a=prompt("Enter the value of a: ");
+		// a=Number.parseInt(a);
+		// let b=prompt("Enter the value of b: ");
+		// b=Number.parseInt(b);
+		// let c=prompt("Enter the value of c: ");
+		// c=Number.parseInt(c);
+		// let s=(a+b+c)/2;
+		// let temp=s*(s-a)*(s-b)*(s-c);
+		// let area=Math.sqrt(temp);
+		// console.log(`The area is ${Math.round(area)}`);
+
+		//swapping the two number
+		// let a=prompt("Enter the value of a: ");
+		// let b=prompt("Enter the value of b: ");
+		// let temp;
+		// temp=a;
+		// a=b;
+		// b=temp;
+		// console.log("The value of a is "+a+" and b is "+b);
+
+		//to find whether the number is positive,negative or null
+		// let a=prompt("Enter the number: ");
+		// var result=Math.sign(a);
+		// if (a>0) {
+		// 	console.log(`${a} is positive`);
+		// }
+		// else if(a<0){
+		// 	console.log(`${a} is negative`);
+		// }
+		// else if(a==0){
+		// 	console.log(`${a} is null`);
+		// }
+		// else{
+		// 	console.log(`${a} is not a number`);
+		// }
+		// let result=(a%2==0)?'even':'odd';
+		// console.log(result);
+
+		
+	</script>
+	
+
+</body>
+</html>

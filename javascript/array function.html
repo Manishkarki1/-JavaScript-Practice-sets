@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow function practice</title>
+</head>
+<body>
+	<div id="container">
+		
+	</div>
+
+	<script type="text/javascript">
+		//array function.. it is the short form of making function. i.e ()=>{};
+		// let about=()=>{
+		// 	console.log("It's me manish karki.");
+		// }
+		let about=()=>console.log("It's me manish karki");
+		let add=(a,b)=>a+b;
+		setTimeout(()=>{
+			console.log("hey");
+		},3000);
+
+		//object and arrow function
+		let obj1={
+			order:"wake up",
+			names:["jack","tom","ramesh"],
+			fun:function(){
+				this.names.forEach((employee)=>{
+					console.log("Good morning "+employee,this.order);
+				});
+			}
+		}
+		obj1.fun();
+
+
+		let sum1=(a=2,b=2)=>{
+			const sum=a+b;
+			console.log(sum);
+		}
+		sum1();
+	</script>
+
+</body>
+</html>

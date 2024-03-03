@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Factoryfunction practice</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		function personFactory(name){
+			return{
+				talk(){
+					return `Hey! I am ${name}`;
+				}
+			}
+		}
+		const me=personFactory("manish");
+		console.log(me.talk());
+		const mom=personFactory("Tara");
+		mom.talk();
+		*/
+		function createElement(type,text,color){
+			const el=document.createElement(type);
+			el.innerText=text;
+			el.style.color=color;
+			document.body.append(el);
+			return{
+				el,
+				setText(text){
+					el.innerText=text;
+				},
+				setColor(color){
+					el.style.color=color;
+				}
+			}
+		}
+		const h1=createElement("h1","hey how are you guys","blue");
+
+	</script>
+</body>
+</html>

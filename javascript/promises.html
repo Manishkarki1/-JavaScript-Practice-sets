@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>promises pracice</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const detail=[{
+			name:"manish",
+			age:20
+		},
+		{
+			name:"tara",
+			age:38
+		}];
+		function getdetail(){
+		setTimeout(()=>{
+			let total="";
+			detail.forEach((data,index)=>{
+			 	total+=`<li>${data.name}</li>`;
+			 })
+			document.body.innerHTML=total;
+		},1000);
+		}
+
+
+		function adddetail(newdetail){
+			return new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					detail.push(newdetail);
+
+					let error=false;
+					if(!error){
+						resolve();
+					}
+					else{
+						reject("not right");
+					}
+				},2000);
+			})
+			
+		}
+		adddetail({name:"niroj",age:43}).then(getdetail);
+
+		// second
+		let myPromise = new Promise(function(myResolve, myReject){
+			myResolve();
+			myReject();
+		});
+
+		myPromise.then(
+			function(value){console.log("It is true.")},
+			function(error){console.log("It is false.")})
+	</script>
+</body>
+</html>

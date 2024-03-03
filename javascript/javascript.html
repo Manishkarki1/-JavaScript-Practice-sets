@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form validation</title>
+		<script type="text/javascript">
+			function validation(){
+              var x = document.getElementById('Fname').value;
+              var y = document.getElementById('Lname').value;
+              var z = document.getElementById('Number').value;
+              if(x=="" || z==""){
+              	alert("First name and number is required");
+              }
+              else{
+              	alert("Successfully submitted");
+              }
+			}
+		
+	</script>
+</head>
+<body>
+<form>
+	<b>Fname</b>: <input type="text" placeholder="Enter first name" id="Fname"><br><br>
+	<b>Lname</b>: <input type="text" placeholder="Enter last name" id="Lname"><br><br>
+	<b>Number</b>: <input type="number" placeholder="Enter your number" id="Number">
+	<button onclick="validation()">Submit</button>
+</form>
+</body>
+</html>

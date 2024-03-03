@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OOP concepts</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//object.create()
+		const Elfwork={
+			attack(){
+				return 'attack with '+this.weapon
+			}
+		}
+		function createElf(name,weapon){
+			let newElf=Object.create(Elfwork);
+			newElf.name=name;
+			newElf.weapon=weapon;
+			return newElf;
+		}
+		var john=createElf('John','Stones');
+		console.log(john.attack());
+		const tiger=createElf('Tiger','gun');
+		console.log(tiger.attack());
+
+		//ES6 Class
+		class Elf{
+			constructor(name,weapon){
+				this.name=name;
+				this.weapon=weapon;
+			}
+			attack(){
+				return 'attack with ' + this.weapon;
+			}
+}
+john=new Elf('cena','hand');
+console.log(john.attack());
+console.log(john instanceof Elf);
+		 
+		//subclassing 
+		class Character{
+			constructor(name,school){
+				this.name=name;
+				this.school=school;
+			}
+			info(){
+				return `${this.name} read in ${this.school}`;
+			}
+		}
+		class otherinfo extends Character{
+			constructor(name,school,rclass){
+				super(name,school);
+				console.log(this); //this means who am i or who called me
+				this.rclass=rclass;
+			}
+		} 
+		const manish=new otherinfo('manish','GNC','13');
+		console.log(manish.info());
+	</script>
+		
+
+</body>
+</html>

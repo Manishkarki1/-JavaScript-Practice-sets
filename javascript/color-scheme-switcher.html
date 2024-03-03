@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color scheme switcher</title>
+	<style type="text/css">
+		.container{
+			display:flex;
+			gap:5px;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			
+		}
+		.box{
+			width:200px;
+			height:200px;
+			cursor:pointer;
+
+		}
+		#red{
+			background-color: red;
+
+		}
+		#green{
+			background-color: green;
+		}
+		#blue{
+			background-color: blue;
+		}
+		#black{
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box" id="red"></div>
+		<div class="box" id="green"></div>
+		<div class="box" id="blue"></div>
+		<div class="box" id="black"></div>
+		
+	</div>
+
+<script type="text/javascript">
+	const boxes=document.querySelectorAll('.box');
+	const body=document.querySelector('body');
+
+	boxes.forEach((button)=>{
+		button.addEventListener('click', function(e){
+			if(e.target.id==='red'){
+				body.style.backgroundColor=e.target.id;			//red
+			}
+			else if(e.target.id==='green'){
+				body.style.backgroundColor=e.target.id;			//green
+			}
+			else if(e.target.id==='blue'){
+				body.style.backgroundColor=e.target.id;			//blue
+			}
+			else{
+				body.style.backgroundColor=e.target.id;			//black
+			}
+
+		});
+	});
+
+</script>	
+
+</body>
+</html>

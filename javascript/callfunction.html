@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>callback function practice</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		function name(){
+			console.log("my name is manish");
+		}
+		function age(){
+			console.info("My age is 20");
+		}
+		function about(callback){
+			callback();
+		}
+		about(name);
+		about(age);
+		about(function(){				//Anonymous functions
+			console.log("See you soon");
+		})
+		*/
+		const detail=[{
+			name:"manish",
+			age:20
+		},
+		{
+			name:"Tara",
+			age:38
+		}];
+		function getdetail(){
+			setTimeout(()=>{
+				let output="";
+				detail.forEach((data,index)=>{
+					output+=`<li>${data.name}</li>`;
+				})
+				document.body.innerHTML=output;
+			},1000)
+
+		}
+		function adddetail(newdetail,callback){
+			setTimeout(()=>{
+				detail.push(newdetail);
+				callback()
+			},2000);
+
+			
+		}
+		adddetail({name:"niroj",age:43},getdetail);
+
+	</script>
+
+</body>
+</html>

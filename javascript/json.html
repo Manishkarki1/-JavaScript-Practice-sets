@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Json practice</title>
+</head>
+<body>
+	<div class="container">
+		
+	</div>
+	<script type="text/javascript">	
+		let jsonobj={
+			name:"manish",
+			age:20,
+			class:"bachelor"
+		}
+		console.log(jsonobj);
+		let myJsonstr=JSON.stringify(jsonobj);
+		console.log(myJsonstr);
+
+		let json=myJsonstr.replace(20,10);
+		console.log(json);
+
+		json=JSON.parse(myJsonstr);
+		console.log(json)
+
+
+
+	</script>
+
+</body>
+</html>

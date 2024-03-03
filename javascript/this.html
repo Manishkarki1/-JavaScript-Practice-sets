@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this keyword</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//this execute same code for multiple object
+		function result(){
+			console.log(this.name);
+		}
+		const name="niroj";
+		const object1={
+			name:"manish",
+			result:result
+		};
+		const object2={
+			name:"abhisekh",
+			result:result
+		};
+		object1.result();
+		object2.result();
+
+
+		//4 different ways of this using.
+
+		//new binding this
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+
+		}
+		const person1=new Person('manish',21);
+		console.log(person1);
+		console.log(person1.age);
+
+		//implicit binding
+		const person={
+			name:'Tara',
+			age:40,
+			hi(){
+				console.log('hi'+this.name);
+			}
+		}
+		person.hi();
+
+		//explicit binding: it uses call,apply and bind
+		const person3={
+			name:'nirdhoj',
+			age:44,
+			hi:function(){
+				console.log('hi'+ this.setTimeout)}.bind(window)
+			
+		}
+		person3.hi();
+
+		//arrow function
+		const person4={
+			name:'anish',
+			age:19,
+			hi:function(){
+				var inner=()=> {console.log('hi '+this.name)}
+				return inner();
+			}
+		}
+		person4.hi();
+	</script>
+</body>
+</html>

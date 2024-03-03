@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>setinterval and settimeout practice</title>
+</head>
+<body>
+	<header>
+		<div class="container">
+			time is <span id="time"></span>
+		</div>
+	</header>
+
+	<script type="text/javascript">
+		//setTimeout
+		function about(greet){
+			console.log(greet+"!My name is manish karki");
+		}
+		let timeout=setTimeout(about,3000,"good morning");
+		console.log(timeout);
+		// clearTimeout(timeout,4000);
+
+		//setinterval
+		// setInterval(about,1000,"good morning");
+		let intervalid=setInterval(about,1000,"good morning");
+		clearInterval(intervalid);
+
+		function displaytime(){
+			time= new Date();
+			// console.log(time);
+			document.getElementById('time').innerHTML=time;
+		}
+		setInterval(displaytime,1000);
+	</script>
+
+
+</body>
+</html>

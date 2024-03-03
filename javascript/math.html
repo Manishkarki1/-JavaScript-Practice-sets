@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>math object practice</title>
+</head>
+<body>
+	<div class="container">
+		
+	</div>
+	<script type="text/javascript">
+		let m=Math;
+		console.log(m);
+
+		//printing the function from math object
+		let a=20.2342343;
+		let b=30;
+		console.log("The rounding value of a and b is",Math.round(a),Math.round(b));
+
+		console.log("3 raised to the power of 4 is",Math.pow(3,4));
+		console.log("2 raised to the power of 6 is",Math.pow(2,6));
+
+		console.log("Square root of 64 is",Math.sqrt(64));
+
+		//ceil and floor
+		let arr=['manish','abhisek','niraj'];
+		console.log("4.9 rounded up to nearest integer is",Math.ceil(4.9));
+		console.log("4.9 rounded down to nearest integer is",Math.floor(4.9));
+		arr1=arr[Math.floor(Math.random()*arr.length)];
+		console.log(arr1);
+
+		//absolute function
+		console.log("Absolute value of 4.55 is",Math.abs(4.55));
+		console.log("Absolute value of -4.55 is",Math.abs(-4.55));
+
+		//trigonometric function
+		console.log("The value of sin(pi) is",Math.sin(Math.PI/2));
+		console.log("The value of cos(pi) is",Math.cos(Math.PI/2));
+		console.log("The value of tan(pi) is",Math.tan(Math.PI/2));
+
+		//max and min function
+		console.log("Maximum value: ",Math.max(1,2,3));
+		console.log("Minimum value: ",Math.min(22,23,11));
+
+		//Generating a random number
+		let r=Math.random();
+		let a1=1;
+		let b1=100;
+		let r_100=a1+(b1-a1)*Math.random();
+		console.log("The random number is",r);
+		console.log("The random number between 1 to 100: ",r_100);
+
+
+
+	</script>
+
+</body>
+</html>

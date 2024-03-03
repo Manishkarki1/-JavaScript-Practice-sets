@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom-projects</title>
+	<style type="text/css">
+		body{
+			/*margin: 0;*/
+			/*padding: 0;*/	
+			box-sizing: border-box;
+		}
+		.js-subscibe-button{
+			border-radius: 50px;
+			border:none;
+			background-color: black;
+			color: white;	
+			padding:10px;	
+			cursor: pointer;
+			transition: 0.5s;
+			font-weight: bold;
+		}
+		.subscribestyle{
+			background-color: #ccc;
+			color: black;
+
+		}
+		.cost-input{
+			font-size: 15px;
+			padding:10px;
+		}
+		.calculate-btn{
+			border:none;
+			font-size: 15px;
+			padding:12px;
+			background-color: green;
+			color:white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h2>Amazon Shipping Calculator</h2>
+	<input type="number" name="number" class="js-cost cost-input" placeholder="Cost of order" onkeydown="	
+		handlecostkeydown(event);
+	">
+	<button onclick="calculate();" class="calculate-btn">Calculate</button>
+	<p class="js-total-cost"></p>
+
+
+	<p>Youtube subscribe Button</p>
+	<button onclick="subscribe();" class="js-subscibe-button">Subscribe</button>
+
+	<script type="text/javascript">
+		/*String(25);
+		console.log('25'-5);*/
+
+		function handlecostkeydown(event){
+			if(event.key==='Enter'){
+				calculate();
+			}	
+		}
+
+		function calculate(){
+			let inputcost=Number(document.querySelector('.js-cost').value);
+			if(inputcost<0){
+				document.querySelector('.js-total-cost').innerHTML=`Error:cost cannot be less than $0`;
+				document.querySelector('.js-total-cost').style.color='red';
+			}
+			if(inputcost>=0 && inputcost<40 ){
+				inputcost+=10;
+				document.querySelector('.js-total-cost').innerHTML=`${inputcost}`;
+
+			}
+		}
+
+		function subscribe(){
+			const buttonelement=document.querySelector('.js-subscibe-button');
+			if(buttonelement.innerHTML==='Subscribe'){
+				buttonelement.innerHTML= 'Subscribed';
+				buttonelement.classList.add('subscribestyle');
+			}
+			else{
+				buttonelement.innerHTML='Subscribe';
+				buttonelement.classList.remove('subscribestyle');
+			}
+			// document.querySelector('.js-subscibe-button').classList='subscribestyle';	
+		}
+
+	</script>
+</body>
+</html>

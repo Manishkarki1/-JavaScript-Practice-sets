@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="
+      playGame('rock');
+    ">Rock</button>
+
+    <button onclick="
+      playGame('paper');
+    ">Paper</button>
+
+    <button onclick="
+      playGame('scissors');
+    ">Scissors</button>
+
+    <button onclick="
+    	score.wins=0;
+    	score.lose=0;
+    	score.tie=0;	
+    	alert('Successfully Reset');
+    ">Reset Score</button>
+
+    <script>
+    	const score={
+    		wins:0,
+    		lose:0,
+    		tie:0
+    	};
+
+
+    	function playGame(playerMove) {
+    		let result='';
+    	 	const computerMove = pickComputerMove(); 	
+    	 	if(playerMove==='scissors'){
+    	 		if(computerMove==='rock'){
+    	 			result='You lose';
+    	 		}
+    	 		else if(computerMove==='paper'){
+    	 			result='You won';
+    	 		}
+    	 		else if(computerMove==='scissors'){
+    	 			result='tie';
+    	 		}
+    	 	}
+    	 	else if(playerMove==='rock'){
+    	 		if(computerMove==='scissors'){
+    	 			result='You won';
+    	 		}
+    	 		else if(computerMove==='paper'){
+    	 			result='You lose';
+    	 		}
+    	 		else if(computerMove==='rock'){
+    	 			result='tie';
+    	 		}
+    	 	}
+    	 	else if(playerMove==='paper'){
+    	 		if(computerMove==='rock'){
+    	 			result='You win';
+    	 		}
+    	 		else if(computerMove==='scissors'){
+    	 			result='You lose';
+    	 		}
+    	 		else if(computerMove==='paper'){
+    	 			result='tie';
+    	 		}
+    	 	}
+
+    	 	if(result==='You won'){
+    	 		score.wins+=1;		
+    	 	}
+    	 	else if(result==='You lose'){
+    	 		score.lose+=1;
+    	 	}
+    		else if(result==='tie'){
+    			score.tie+=1;
+    		}
+
+    	  	alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+wins:${score.wins},Losses:${score.lose},Ties:${score.tie} `);
+    	}
+
+    	function pickComputerMove() {
+    		let result = ['rock','paper','scissors'];
+    		let computer=result[Math.floor(Math.random()*result.length)];
+    	  	return computer;
+    	} 
+    </script>
+  </body>
+</html>

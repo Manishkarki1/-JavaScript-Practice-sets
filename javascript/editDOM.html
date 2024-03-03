@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit and remove DOM</title>
+</head>
+<body>
+	<ul class="language">
+		<li>Javascript</li>
+	</ul>
+
+	<script type="text/javascript">
+		function addLanguage(langName){
+			const li=document.createElement('li')
+			li.innerHTML=`${langName}`;
+			document.querySelector('.language').appendChild(li);
+		}
+		addLanguage("python");
+		addLanguage("C language");
+
+		//best way
+		function addOptimizelang(langname){
+			const li=document.createElement('li')
+			li.appendChild(document.createTextNode(langname));
+			document.querySelector('.language').appendChild(li);
+		}
+		addOptimizelang("c++");
+
+		//edit
+		const secondlang=document.querySelector('li:nth-child(2)')
+		const newli=document.createElement('li')
+		newli.textContent='hey'
+		secondlang.replaceWith(newli);
+		//edit
+		const thirdlang=document.querySelector("li:nth-child(3)")
+		thirdlang.outerHTML='<li>TypeScript</li>'
+
+		//remove
+		const lastlang=document.querySelector('li:last-child')
+		lastlang.remove();
+	</script>
+</body>
+</html>

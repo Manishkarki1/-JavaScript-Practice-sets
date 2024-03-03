@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>High order array loops</title>
+</head>
+<body>	
+	<script type="text/javascript">
+		const array=[1,2,3,4,5];
+		for(const i of array){
+			console.log(i);
+		}
+
+		const object={
+			name:"manish",
+			age:18,
+			city:"kathmandu"
+		}
+		for(const key in object){
+			console.log(object[key]);
+		}
+
+		const language=['java','javascript','python','c'];
+
+		// function print(item){
+		// 	console.log(item);
+		// }
+		// language.forEach(print);
+		
+		language.forEach((item,index,arr)=>{
+			console.log(item,index,arr);
+		})
+		function foo(){
+			var a=1;
+			if(true){
+				var a =2;
+			}
+			console.log(a);
+		}
+		function foo1(x){
+			x.push(4);
+			x=[5,6,7];
+			x.push(8);
+		}
+		const arr=[1,2,3];
+		foo(arr);
+		console.log(arr);
+
+		console.log([1,2,...[3,4,...[5,6]]])
+		function baz(a){
+			arguments[0]=2;
+			console.log(a);
+		}
+		baz(3);
+		console.log(5+'5');
+		console.log(5-'5');
+
+		function splicing(){
+			const arr=[1,2,3];
+			arr.splice(1,2);
+			console.log(arr);
+		}
+		var x=1;
+		function foo(x){
+			x=x+x;
+		}
+		foo(x);
+		console.log(x);
+
+		
+		var variable=10;
+		(()=>{
+			console.log(variable);
+			let variable=20;
+			console.log(variable);
+		})();
+	</script>
+
+</body>
+</html>

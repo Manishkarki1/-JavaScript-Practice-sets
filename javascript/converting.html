@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>convertor</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+
+			padding: 0px;
+
+		}
+	
+		#container{
+			width:500px;
+			margin: auto;
+
+			text-align: center;	
+			background-color: #7993B3;
+			box-shadow: 0px 0px 2px 1px blue;
+
+
+		}
+		section{
+			margin: 10px;
+		}
+		section input{
+				height: 40px;
+				width: 400px;
+				font-size: 20px;
+				padding:0px 5px;
+		}
+		section button{
+			height: 40px;
+			width: 100px;
+			font-size: 20px;
+			margin: 5px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>Unit Convertor</h1>
+			<h3>Here you can convert your number from any unit to any unit.</h3>	
+		</header>
+		<section>
+			<input type="number" name="number" step="any" id="data"> 
+			<select id="source">
+				<option>kms</option>
+				<option>miles</option>
+			</select>
+			<button id="convert" onclick="convert()">Convert</button>
+			<select id="destination">
+				<option>miles</option>
+				<option>kms</option>
+			</select>	
+			<h1 id="result">
+				
+			</h1>
+		</section>
+
+	</div>
+	
+	<script type="text/javascript">
+		function convert(){
+			let values=document.getElementById('source').value;
+			let values2=document.getElementById('destination').value;
+			let input=document.getElementById('data').value;
+			if (values=='kms' && values2=='miles') {
+				const milesfactor=0.621371;
+				let miles=input*milesfactor;
+				document.getElementById("result").innerHTML=`${miles} miles`;
+			}
+			else if(values=='kms' && values2=='kms') {
+				document.getElementById("result").innerHTML=`${input} kms`; 
+			}	
+			else if(values=='miles' && values2=='kms'){
+				const kmsfactor=1.60934;
+				let kms=input*kmsfactor;
+				document.getElementById("result").innerHTML=`${kms} kms`;
+			}		
+			
+		}
+	</script>
+
+</body>
+</html>

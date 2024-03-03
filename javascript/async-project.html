@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>project</title>
+</head>
+<body>
+	<div class="container">
+		<h2>Let's change the background color</h2>
+		<button id="start">Start</button>
+		<button id="stop">Stop</button>
+	</div>
+
+	<script type="text/javascript">
+		const randomColor=function(){
+			const hex="0123456789ABCDEF"
+			let color='#'
+			for(let i=0;i<6;i++){
+				color+=hex[Math.floor(Math.random()*16)]
+			}
+			return color;
+		};
+
+		let change;
+		const startbtn=document.querySelector('#start');
+		const stopbtn=document.querySelector('#stop');
+		startbtn.addEventListener('click',()=>{
+			change=setInterval(()=>{
+				document.body.style.backgroundColor=randomColor();
+			},1000);
+		});
+		stopbtn.addEventListener('click',()=>{
+			clearInterval(change);
+			change=null;
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript practice</title>
+	   <script type="text/javascript">
+    	var a=2;
+    	var b=2;
+    	var result;
+    	document.write("a=2<br>b=2<br>");
+
+// using the arithmetic operators(+,-,*,/)
+    	result=a+b;
+        document.write("<br>a+b="+result);
+        // prompt("enter your name: ");
+    	result=a-b;
+        document.write("<br>a-b="+result);
+           result=a*b;
+        document.write("<br>a*b="+result);
+        document.write("<br>");
+        document.write(++a);
+  
+
+//using the comparison operators(<,<=,>,>=,==,!=)
+        document.write("a<b:<br>");
+        document.write(a<b);
+        document.write("<br>a<=b:");
+        document.write(a<=b);
+        document.write("<br>a>b:");
+        document.write(a>b);
+        document.write("<br>a>=b:");
+        document.write(a>=b);
+     
+//using the logical operators(&&,||,!)
+        var a=true;
+        var b=false;
+        document.write("<br>a=true <br> b=false:<br>");
+        document.write("a&&b:");
+        document.write(a&&b);
+        document.write("<br>a||b:");
+        document.write(a||b);
+          document.write("<br>!a :");
+        document.write(!a);
+            document.write("<br>!b :");
+        document.write(!b);
+       
+//using the assignment operators(+=,-=,*=,/=,%=,==)
+        var a=10;
+            document.write("<br>Value of a=>:"+a);
+             a+=5;
+            document.write("<br>value of(a+=5) :"+a);
+            a-=5;
+            document.write("<br> value of (a-=5):"+a);
+            a*=5;
+            document.write("<br>value of (a*=5):"+a);
+           
+           var a=10;
+           var b=20;
+           var c=25;
+           var max;
+           document.write("<br> a=10<br>b=20 <br> c=25");
+           max=(a>b)?10:20;
+           document.write("<br>The maximum number is:");
+           document.write(max);
+
+
+
+
+        function sure(){
+           alert("Are you sure?");
+        }
+    </script>
+</head>
+<body>
+	<script type="text/javascript">
+//To find out perimeter of rectangle
+		function perimeter(l,b){
+			return 2*(l+b);
+		}
+		var a=perimeter(2,2);
+		document.write("<br>length=2<br>breath=2<br><br>perimeter="+a);
+
+//if else statement
+         //  var n=prompt("enter a number=");
+         // if (n%2==0) {
+         // 	document.write("<br><br>number is even"+n);
+         // }
+         // else
+         // 	document.write("number is even"+n);
+            var a=2;
+            var b=3;
+            var c=4;
+            document.write("<br>a=2 <br> b=3 <br> c=4");
+            if (a>b && a>c) {
+            	document.write("the largest number is "+a);
+            }
+            else if (b>a && b>c) {
+            	document.write("the largest number is "+b);
+            }
+            else
+            	document.write("the largest number is "+c);
+//ternary operator(Its a simply a short cut of if else statement)
+    let age=prompt("Enter your age: ");
+    age=Number.parseInt(age);
+    let vote=(age>=18)?"You are eligible to vote":"You are not eligible to vote";
+    console.log(vote);
+//switch case
+      // var day=prompt("Enter number=");
+      // switch(day)
+      // {
+      // 	case "1": document.write("<br> Sunday");
+      // 	break;
+      // 	case "2": document.write("<br> Monday");
+      // 	break;
+      //   case "3": document.write("<br> Tuesday");
+      // 	break;
+      // 	case "4": document.write("<br> Wednesday");
+      // 	break;
+      // 	case "5": document.write("<br> Thursday");
+      // 	break;
+      // 	case "6": document.write("<br> friday");
+      // 	break;
+      //   case "7": document.write("<br> Saturday");
+      // 	break;
+      // 	defualt:
+      // 	document.write("<br> Invalid Day");
+      // }
+//for loop
+            var n=5,i,fact=1;
+            for(i=1;i<=n;i++)
+            {
+            	fact=fact*i;
+            }
+            document.write("<br>The factorial is"+fact);
+// while loop
+    let k=1;
+    while(k<10){
+      document.write(k);
+      k+=1;
+    }
+// do while loop
+    let j=20;
+    do{
+      document.write(`${j} is less than 10`);
+      j++;
+    }
+    while(j<10);
+
+	</script>
+  
+</body>
+</html>

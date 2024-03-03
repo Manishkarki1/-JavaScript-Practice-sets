@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>head and tail game</title>
+</head>
+<body>
+	<h3>Welcome to head and tail game</h3>
+	<button onclick="playGame('head');">heads</button>
+	<button onclick="playGame('tail');">tails</button>
+	<button onclick="
+		count.won=0;
+		count.lose=0;
+		alert('Successfully Reset');
+	">Reset</button>
+	<script type="text/javascript">
+		const count=JSON.parse(localStorage.getItem('count')) || {
+			won:0,
+			lose:0
+		};
+		function playGame(guess){
+			let result='';
+			let option=['head','tail'];
+			let choice=option[Math.floor(Math.random()*option.length)];
+			if(guess==choice){
+				result='You won'
+				count.won+=1;
+			}
+			else{
+				result='You lose'
+				count.lose+=1;
+			}
+			alert(`You picked ${guess}. Result ${choice}.
+wins:${count.won},Losses:${count.lose}`);
+		
+			localStorage.setItem('count',JSON.stringify(count));
+		}	
+	</script>
+
+</body>
+</html>

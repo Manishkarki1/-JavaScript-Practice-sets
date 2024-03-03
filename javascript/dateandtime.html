@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>date and time</title>
+</head>
+<body>
+	<div class="container">
+		<span id="date">hey how are you?Do you want to see time.</span>
+		<button id="btn" onclick="datetime()">Yes</button>
+		<button id="btn1" onclick="hide()">Hide</button>
+
+	</div>
+<script type="text/javascript">
+	function datetime(){
+		let time=new Date();
+		document.getElementById('date').innerHTML=time;
+		setInterval(datetime,1000);
+}
+	function hide(){
+		let para=document.getElementById('date');
+		para.style.display="none";
+			}
+	// let newDate=new Date(year,month,date,hours,minutes,seconds,milliseconds);
+	let newDate=new Date(2050,11,14,12) //month as 0 is january and 11 is december
+	console.log(newDate);
+	let date=Array.from(newDate);
+	date.splice(1,2,5,20);
+	console.log(date);	
+
+	let year=newDate.getFullYear();
+	console.log("The year is ",year);
+
+
+	let dt=newDate.getDate();
+	console.log("The date is ",dt);
+
+
+	let month=newDate.getMonth();
+	console.log("The month is ",month);
+
+	let hours=newDate.getHours();
+	console.log("The hours is ",hours)
+
+	let Day=newDate.getDay();
+	console.log("The day is",Day);
+
+	newDate.setDate(32);
+	console.log(newDate);
+	newDate.setMinutes(20);
+	console.log(newDate);
+	newDate.setYear(2024);
+	console.log(newDate);
+
+	
+
+</script>
+</body>
+</html>

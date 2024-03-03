@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Evertlistener practice</title>
+</head>
+<body>
+	<div class="button">
+		<button id="btn">Click me</button>
+	</div>
+	<script type="text/javascript">
+		let x=(e)=>{
+			console.log(e);
+			console.log(e.target);
+			console.log(e.clientX,e.clientY);
+		}
+		btn.addEventListener('click',x);
+	</script>
+</body>
+</html>

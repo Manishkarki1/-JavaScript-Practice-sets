@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>call(),apply(),bind()</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//call() //it takes comma seperated parameter
+		/*
+		const wizard={
+			name:'manish',
+			health:100,
+			heal(num1,num2){
+				return this.health+=num1+num2;
+			}
+		}
+		const archer={
+			name:'Tara',
+			health:30
+		}
+		console.log("before heal",archer);
+		wizard.heal.call(archer,10,20);
+		console.log("After heal",archer);
+		*/
+
+		/*
+		//apply() it takes array of parameter.
+		const wizard={
+			name:'manish',
+			health:100,
+			heal(num1,num2){
+				return this.health+=num1+num2;
+			}
+		}
+		const archer={
+			name:'Tara',
+			health:30
+		}
+		console.log("before heal",archer);
+		wizard.heal.apply(archer,[10,20]);
+		console.log("After heal",archer);
+		
+
+		//bind() 
+		const wizard={
+			name:'manish',
+			health:100,
+			heal(){
+				return this.health;
+			}
+		}
+		const archer={
+			name:'Tara',
+			health:30
+		}
+		console.log("before heal",archer);
+		const afbind=wizard.heal.bind(archer);
+		console.log("After heal",afbind());
+		*/
+
+		// function currying
+		function multiply(a,b){
+			console.log(a,b);
+			return a*b
+		}
+		let multiplyByTwo=multiply.bind(this,2)
+		console.log(multiplyByTwo(4));
+
+
+		 
+	</script>
+
+</body>
+</html>

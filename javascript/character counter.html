@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Real-time character counter</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			display: flex;
+			height:100vh;
+			justify-content: center;
+			align-items: center;
+			background:linear-gradient(35deg,orangered 85%,blue 15%);	
+		}
+		#container{
+			background-color: cyan;
+			width: 450px;
+			padding: 15px;
+			margin: 5px;
+			border-radius: 8px;
+			box-shadow: 0px 4px 8px rgba(0,0,0,.3);
+		}
+		#textarea{
+			resize: none;
+			width: 100%;
+			height: 80px;
+			font-size: 18px;
+			font-family: cursive;
+			padding: 10px;
+			box-sizing: border-box;
+			border:solid 2px darkgrey;
+
+		}
+		.counter-container{
+			display: flex;
+			justify-content: space-between;
+			font-size: 20px;
+		}
+		.counter-container p:nth-child(2){
+			color:red;
+			font-weight: bold;
+		}
+		.counter-container>p{
+			color: green;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h2>Real-time Character Counter</h2>
+		<textarea id="textarea" maxlength="25" placeholder="Please write your text.." autofocus></textarea>
+		<div class="counter-container">
+			<p>Total Characters: <span class="total" id="total-counter">20</span></p>
+			<p>Remaining:<span class="Remaining" id="Remaining-counter">5</span></p>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		const textarea1=document.getElementById("textarea");
+		const totalcounter1=document.getElementById("total-counter");
+		const remainingcounter1=document.getElementById("Remaining-counter");
+		textarea1.addEventListener("keyup",()=>{
+			updateCounter();
+		})
+		 updateCounter();
+		function updateCounter(){
+			totalcounter1.innerText=textarea1.value.length;
+			let maxnum=textarea1.getAttribute("maxlength");
+			remainingcounter1.innerText=maxnum-textarea1.value.length;
+
+		}
+	</script>
+
+</body>
+</html>

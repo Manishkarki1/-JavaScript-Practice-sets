@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>practice</title>
+	<style type="text/css">
+		ul{
+			list-style: none;
+
+		}
+		#navbar ul{
+			display: flex;
+			/*flex-direction: row;*/
+		}
+		li{
+			padding: 0px 10px;
+			font-size: 2.0rem;
+		}
+	</style>
+</head>
+<body>
+	<nav id="navbar">
+		<ul>
+			<li class="list" hidden>Home</li>  <!--it will hide the home-->
+			<li class="list">About</li>
+			<li class="list">Contact</li>
+			<li class="list">Document</li>
+
+		</ul>
+	</nav>
+	<div id="container">Hey Now I am practicing the HTML attribute and its method</div>
+	<script type="text/javascript">
+		document.getElementsByTagName('ul')[0].firstElementChild.style.color="blue";
+		document.getElementsByTagName('ul')[0].lastElementChild.style.color="green";
+
+		Array.from(document.getElementsByTagName('li')).forEach((element)=>{
+			element.style.background="cyan";
+		})
+
+		console.log(document.body.textContent);      //it will bring all the text of the body
+		console.log(document.body.firstChild.data);
+
+		//Html attribute
+		let first=document.getElementById("container");
+		let a=first.getAttribute("class")
+		console.info(a);	
+		//hasAttribute
+		console.log(first.hasAttribute("id"));
+		console.log(first.hasAttribute("style"));
+		//setAttribute
+		first.setAttribute("hidden","true");
+		first.setAttribute("class","practice yes");
+		//removeAttribute
+		first.removeAttribute("class");
+
+	</script>
+
+</body>
+</html>

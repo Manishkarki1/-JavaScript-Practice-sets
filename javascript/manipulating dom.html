@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulating DOM</title>
+</head>
+<body>
+	<div id="container">
+		<ul class="about" id="para">
+			<li>its me manish</li>
+			<li>from bhimdhunga,sitapaila</li>
+			<li>We love our country</li>
+		</ul>
+		<button type="submit" onclick="togglehide()" id="btn">submit</button>
+
+	</div>
+
+	<script type="text/javascript">
+		let main=document.getElementById('container');
+		console.log(main);
+		// let abouts=document.getElementByClassName('about');
+		// console.log(abouts);
+		let sel=document.querySelector(".about>li");
+		console.log(sel);
+		let selector=document.querySelectorAll('.about>li');
+		console.log(selector);
+
+		let para= document.getElementById('para');
+		para.addEventListener('mouseover',function run(){
+			alert("Cursor inside");
+		});
+		para.addEventListener('mouseout',function run(){
+			alert("Cursor outside");
+		});
+
+		function togglehide(){
+			let btn=document.getElementById('btn');
+			let para=document.getElementById('para');
+			if (para.style.display !='none'){
+				para.style.display="none";	
+			}
+			else{
+				para.style.display="block";
+			}
+		}
+	</script>
+
+</body>
+</html>

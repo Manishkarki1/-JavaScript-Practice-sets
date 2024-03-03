@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>practice</title>
+	<style type="text/css">
+		.bulb{
+			width: 300px;
+			height: 300px;
+			clip-path: circle();
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<!--program to show different alerts when different buttons are clicked-->
+	<!-- <button onclick="alert('hey you are in the right place')">clickme1</button>
+	<button id="click">clickme2</button>
+	<script type="text/javascript">
+		click.addEventListener('click',function run(){
+			alert('Now you are in the wrong place')
+		});
+	</script>
+ -->
+
+ 	<!-- bookmarks using addeventlistener -->
+ 	<!--
+ 	<h1>Bookmarks page</h1>
+ 	<button id="google">Google</button>
+ 	<script type="text/javascript">
+ 		document.getElementById('google').addEventListener('click',function run(){
+ 			window.location="https://www.google.com";
+ 			win.focus();
+ 		})
+ 	</script>-->
+
+ 	<!-- program to make glowing bulb using eventlistener toggle -->
+ 	<div id="container">
+ 		<div id="bulb" class="bulb">
+ 			
+ 		</div>
+ 	</div>
+ 	<script type="text/javascript">
+ 		setInterval(function(){
+ 			document.querySelector("#bulb").classList.toggle("bulb")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+ 		},3000);
+ 	</script>
+
+</body>
+</html>

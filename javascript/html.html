@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>practicing html with javascript</title>
+</head>
+<body>
+	<div id="container">
+		<div>
+			
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		// console.log("Hello world")	
+		// console.log("How are you?")
+
+		document.getElementById('container').innerHTML="i am practicing it";
+		let a="my name is manish";
+		{
+			console.log(a);
+		}
+		// let a="my surname is karki";   //it will give error because a has already been declared
+		// const b="this cannot be changed";
+		// b="I want to change this.";
+		// console.log(b);
+
+		let age=30;
+		if(age>=18){
+			document.write("<br> You are eligible to vote");
+		}
+		else{
+			document.write("You are not eligible to vote");
+		}
+
+//for loop
+		let student=['manish','bishal','bimal','niraj'];
+		// for(let index=0;index<student.length;index++){
+		// 	console.log(student[index]);
+		// }
+
+		// student.forEach(function f(element)){  //its a shortcut
+		// 	console.log(element);
+		// }
+
+		for(element of student){
+			console.log(element);
+		}
+
+		//
+
+	// for loop in object
+		let employee={
+			name:"manish",
+			salary:20000,
+			profession:"coding"
+		}
+		for(key in employee){
+			console.log(`The ${key} of employee is ${employee[key]}`);
+		}
+
+		let number=confirm("Are you 18++ or not?");
+		if(number){
+			document.write("welcome\n");
+		}
+		else{
+			document.write("Sorry\n");
+		}
+
+	</script>
+
+</body>
+</html>
